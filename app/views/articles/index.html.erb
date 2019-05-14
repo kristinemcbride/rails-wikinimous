@@ -1,0 +1,6 @@
+<h1> Harry Potter books & quotes </h1>
+
+<%= link_to 'add a new article', new_article_path %>
+<% @articles.each do |article| %>
+<h2><%= link_to article.title, article_path(article.id) %> <%= link_to "🗑", article_path(article.id), method: :delete, data: {confirm: 'are you sure?'} %> </h2>
+<% end %>
